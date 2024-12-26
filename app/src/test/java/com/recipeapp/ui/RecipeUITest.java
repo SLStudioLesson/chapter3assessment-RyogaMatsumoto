@@ -54,8 +54,8 @@ public class RecipeUITest {
         ));
         when(mockDataHandler.readData()).thenReturn(recipes);
 
-        // ーーーーーーーーーーーーーーーーーープッシュ時にエラーが出てはいけないためコメントアウトーーーーーーーーーーーーーーーーーー  RecipeUI ui = new RecipeUI(mockDataHandler);
-        // ーーーーーーーーーーーーーーーーーープッシュ時にエラーが出てはいけないためコメントアウトーーーーーーーーーーーーーーーーーー  ui.displayMenu();
+        RecipeUI ui = new RecipeUI(mockDataHandler);
+        ui.displayMenu();
 
         // 出力内容を検証
         Assertions.assertThat(outContent.toString()).contains("Current mode: CSV");
@@ -72,8 +72,8 @@ public class RecipeUITest {
         // データハンドラーのモックを設定して、writeDataメソッドが呼び出されたことを検証
         Mockito.doNothing().when(mockDataHandler).writeData(Mockito.any(Recipe.class));
 
-        // ーーーーーーーーーーーーーーーーーープッシュ時にエラーが出てはいけないためコメントアウトーーーーーーーーーーーーーーーーーー  RecipeUI ui = new RecipeUI(mockDataHandler);
-        // ーーーーーーーーーーーーーーーーーープッシュ時にエラーが出てはいけないためコメントアウトーーーーーーーーーーーーーーーーーー  ui.displayMenu();
+        RecipeUI ui = new RecipeUI(mockDataHandler);
+        ui.displayMenu();
 
         // モックのwriteDataメソッドが正しく呼び出されたことを検証
         Mockito.verify(mockDataHandler, Mockito.times(1)).writeData(Mockito.any(Recipe.class));
@@ -92,8 +92,8 @@ public class RecipeUITest {
         ));
         when(mockDataHandler.searchData("name=Pancakes")).thenReturn(searchResults);
 
-        // ーーーーーーーーーーーーーーーーーープッシュ時にエラーが出てはいけないためコメントアウトーーーーーーーーーーーーーーーーーー  RecipeUI ui = new RecipeUI(mockDataHandler);
-        // ーーーーーーーーーーーーーーーーーープッシュ時にエラーが出てはいけないためコメントアウトーーーーーーーーーーーーーーーーーー  ui.displayMenu();
+        RecipeUI ui = new RecipeUI(mockDataHandler);
+        ui.displayMenu();
 
         // 検索結果が表示されていることを検証
         Assertions.assertThat(outContent.toString()).contains("Matching Recipes:");

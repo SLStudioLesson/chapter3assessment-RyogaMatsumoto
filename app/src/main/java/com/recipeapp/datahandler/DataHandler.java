@@ -12,5 +12,5 @@ public interface DataHandler {
 
     public void writeData(Recipe recipe) throws IOException;
 
-    public ArrayList<Recipe> searchData(String keyword) throws IOException;
+    public ArrayList<Recipe> searchData() throws IOException;
 }

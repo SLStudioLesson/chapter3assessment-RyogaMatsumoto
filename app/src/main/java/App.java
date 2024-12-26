@@ -1,13 +1,12 @@
 import com.recipeapp.datahandler.CSVDataHandler;
 import com.recipeapp.datahandler.DataHandler;
 import com.recipeapp.datahandler.JSONDataHandler;
-// import com.recipeapp.ui.RecipeUI;
+import com.recipeapp.ui.RecipeUI;
+import com.recipeapp.datahandler.DataHandler;
 import java.io.*;
 
 public class App {
-
     public static void main(String[] args) {
-
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(System.in))) {
             System.out.println("Choose the file format:");
             System.out.println("1. CSV");
@@ -17,27 +16,15 @@ public class App {
             
             switch (choice) {
                 case "2":
-                    System.out.println("\nCurrent mode: JSON");
-                    System.out.println("\nMain Menu:");
-                    System.out.println("Choose the file format:");
-                    System.out.println("1: Display Recipes");
-                    System.out.println("2: Add New Recipe");
-                    System.out.println("3: Search Recipe");
-                    System.out.println("4: Exit Application");
-                    System.out.print("Please choose an option: ");
-                    String choice_JSON = reader.readLine();
+                    CSVDataHandler csvDataHandler = new CSVDataHandler();
+                    RecipeUI recipeUI2 = new RecipeUI((DataHandler)csvDataHandler);
+                    recipeUI2.displayMenu();
                     break;
 
                 default:
-                    System.out.println("\nCurrent mode: CSV");
-                    System.out.println("\nMain Menu:");
-                    System.out.println("Choose the file format:");
-                    System.out.println("1: Display Recipes");
-                    System.out.println("2: Add New Recipe");
-                    System.out.println("3: Search Recipe");
-                    System.out.println("4: Exit Application");
-                    System.out.print("Please choose an option: ");
-                    String choice_CSV = reader.readLine();
+                    JSONDataHandler jsonDataHandler = new JSONDataHandler();
+                    RecipeUI recipeUI1 = new RecipeUI((DataHandler)jsonDataHandler);
+                    recipeUI1.displayMenu();
                     break;
             }
         } catch (Exception e) {
