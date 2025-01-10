@@ -58,15 +58,11 @@ public class CSVDataHandler implements DataHandler {
         return recipes;
     }
 
-
-    //ーーーーーーーーーーーーーーーーーーー質問箇所ーーーーーーーーーーーーーーーーーーー
-
     // 新しいレシピをrecipes.csvに追加します。 レシピ名と材料はカンマ区切りで1行としてファイルに書き込まれます。
     @Override
     public void writeData(Recipe recipe) {
         // 3,DataHandlerから「2」で「Recipeクラス」に追加した新しいレシピを受け取り、recipes.csvに書き込む (レシピ名と材料はカンマ区切りで1行としてファイルに書き込まれます。)
         // ※ Recipeオブジェクトからどのように「Tomato Soup,Tomatoes, Onion...」のような1行の文字列にしていくか整理しましょう。
-        // Recipe newRecipe = new Recipe(addRecipe, addIngredients);
 
         // ユーザから受け取った材料を変数にまとめる
         String writeIngredient = "";
@@ -87,9 +83,6 @@ public class CSVDataHandler implements DataHandler {
             System.out.println("Failed to add new recipe: " + e.getMessage());
         }
     }
-
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
 
     // 以降の設問で処理を実装するため定義し、nullをreturnしてください。
     @Override

@@ -93,9 +93,6 @@ public class RecipeUI implements DataHandler {
             System.out.println("Error reading file: " + e.getMessage());
         }
     }
-    
-    
-    //ーーーーーーーーーーーーーーーーーーー質問箇所ーーーーーーーーーーーーーーーーーーー
 
     // ユーザーからレシピ名と主な材料を入力させ、DataHandlerを使用してrecipes.csvに新しいレシピを追加
     private void addNewRecipe() throws IOException {
@@ -135,9 +132,6 @@ public class RecipeUI implements DataHandler {
             System.out.println("Failed to add new recipe: " + e.getMessage());
         }
     }
-
-    //ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
-
 
     @Override
     public String getMode() {
