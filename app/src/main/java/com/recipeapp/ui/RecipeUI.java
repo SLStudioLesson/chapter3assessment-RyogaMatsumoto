@@ -86,6 +86,7 @@ public class RecipeUI implements DataHandler {
                     }
                     System.out.println(displayIngredient);
                 }
+                System.out.println("-----------------------------------");
             } else {
                 System.out.println("\nNo recipes available.");
             }
