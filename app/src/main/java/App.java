@@ -16,14 +16,14 @@ public class App {
             
             switch (choice) {
                 case "2":
-                    CSVDataHandler csvDataHandler = new CSVDataHandler();
-                    RecipeUI recipeUI2 = new RecipeUI((DataHandler)csvDataHandler);
-                    recipeUI2.displayMenu();
+                JSONDataHandler jsonDataHandler = new JSONDataHandler();
+                RecipeUI recipeUI2 = new RecipeUI((DataHandler)jsonDataHandler);
+                recipeUI2.displayMenu();
                     break;
 
                 default:
-                    JSONDataHandler jsonDataHandler = new JSONDataHandler();
-                    RecipeUI recipeUI1 = new RecipeUI((DataHandler)jsonDataHandler);
+                    CSVDataHandler csvDataHandler = new CSVDataHandler();
+                    RecipeUI recipeUI1 = new RecipeUI((DataHandler)csvDataHandler);
                     recipeUI1.displayMenu();
                     break;
             }

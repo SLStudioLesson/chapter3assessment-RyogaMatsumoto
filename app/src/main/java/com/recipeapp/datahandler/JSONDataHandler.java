@@ -1,6 +1,7 @@
 package com.recipeapp.datahandler;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.recipeapp.model.Recipe;
 
@@ -27,5 +28,11 @@ public class JSONDataHandler implements DataHandler{
     @Override
     public ArrayList<Recipe> searchData() {
         return null;
+    }
+
+    @Override
+    public List<String> readRecipes() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'readRecipes'");
     }
 }
